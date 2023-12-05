@@ -21,6 +21,7 @@
                 email
                 [ngClass]="{ 'is-invalid': Email.touched && Email.invalid }" />
             </div>
+            <small>Email is admin@gmail.com</small>
             <div
               *ngIf="Email.touched && Email.invalid"
               class="alert alert-danger">
@@ -43,6 +44,7 @@
                 [ngClass]="{
                   'is-invalid': Password.touched && Password.invalid
                 }" />
+                  <small>Password is admin123</small>
               <div
                 *ngIf="Password.touched && Password.invalid"
                 class="alert alert-danger">

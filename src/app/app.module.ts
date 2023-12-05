@@ -34,6 +34,7 @@ import {AngularEditorModule} from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { SubscribersComponent } from './subscribers/subscribers/subscribers.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { SubscribersComponent } from './subscribers/subscribers/subscribers.comp
     FormsModule,
     AngularEditorModule,
     ReactiveFormsModule,
+    OAuthModule.forRoot(),
     ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),

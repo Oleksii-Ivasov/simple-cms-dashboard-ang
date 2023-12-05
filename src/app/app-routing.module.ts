@@ -11,10 +11,18 @@ import { SubscribersComponent } from './subscribers/subscribers/subscribers.comp
 const routes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'categories', component: CategoriesComponent,  canActivate: [authGuard] },
-  { path: 'posts', component: AllPostComponent,  canActivate: [authGuard] },
-  { path: 'posts/new', component: NewPostComponent,  canActivate: [authGuard] },
-  { path: 'subscribers', component: SubscribersComponent,  canActivate: [authGuard] },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'posts', component: AllPostComponent, canActivate: [authGuard] },
+  { path: 'posts/new', component: NewPostComponent, canActivate: [authGuard] },
+  {
+    path: 'subscribers',
+    component: SubscribersComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({

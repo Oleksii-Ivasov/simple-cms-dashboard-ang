@@ -13,12 +13,12 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async onSubmit(form: NgForm) {
     try {
-      //await this.authService.login(form.value.email, form.value.password);
+      await this.authService.login(form.value.email, form.value.password);
       this.router.navigate(['/']);
     } catch (error) {
       this.toastr.error(error as any);

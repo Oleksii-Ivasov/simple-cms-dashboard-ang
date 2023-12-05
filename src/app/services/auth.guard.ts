@@ -8,12 +8,11 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const toastr = inject(ToastrService);
   const isAllowed = authService.getLoggedInStatus()
-  // if (authService.getLoggedInStatus()) {
-  //   return true;
-  // } else {
-  //   router.navigate(['/login']);
-  //   toastr.warning('You do not have permission to access this page');
-  //   return false;
-  // }
-  return true
+  if (authService.getLoggedInStatus()) {
+    return true;
+  } else {
+    router.navigate(['/login']);
+    toastr.warning('You do not have permission to access this page');
+    return false;
+  }
 };
